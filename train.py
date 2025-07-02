@@ -1,4 +1,4 @@
-from src.data_loader import load_tracking_data, load_plays
+from src.data_loader import load_all_tracking_data, load_plays
 from src.preprocess import prepare_data
 from src.model import train_model, evaluate_model, save_model
 
@@ -7,7 +7,7 @@ import os
 
 if __name__ == "__main__":
     print("🔄 Carregando dados...")
-    tracking_df = load_tracking_data(week=1)
+    tracking_df = load_all_tracking_data(weeks=range(1, 9))
     plays_df = load_plays()
 
     print("⚙️  Preparando dados...")
